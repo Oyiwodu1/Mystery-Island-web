@@ -1,0 +1,193 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #07110f;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.game-header {
+    text-align: center;
+    padding: 25px;
+    background: #0b1915;
+    border-bottom: 1px solid #34443b;
+}
+
+.game-header h1 {
+    letter-spacing: 5px;
+    color: #d6b477;
+}
+
+.game-header p {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-top: 8px;
+}
+
+.game-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr 240px;
+    gap: 20px;
+    padding: 25px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.panel {
+    background: #10221c;
+    padding: 22px;
+    border: 1px solid #34483c;
+    border-radius: 8px;
+}
+
+.panel h2 {
+    font-size: 14px;
+    color: #d6b477;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.player-panel p {
+    margin-bottom: 18px;
+    font-size: 13px;
+}
+
+.energy-bar {
+    width: 100%;
+    height: 9px;
+    background: #34443b;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#energyFill {
+    width: 71.4%;
+    height: 100%;
+    background: #d6b477;
+}
+
+.island-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.island-heading {
+    text-align: center;
+}
+
+.island-heading p {
+    color: #a6b4a9;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.island-heading h2 {
+    color: #d6b477;
+    letter-spacing: 4px;
+}
+
+.island-scene {
+    min-height: 380px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    text-align: center;
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.1)
+        ),
+        linear-gradient(135deg, #31594d, #102a27, #07110f);
+    border: 1px solid #526b58;
+    border-radius: 8px;
+}
+
+.island-scene p {
+    max-width: 500px;
+    line-height: 1.8;
+    color: #e0e5df;
+}
+
+.game-actions {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    cursor: pointer;
+    padding: 13px 16px;
+    border: 1px solid #b99b66;
+    background: #c4a46a;
+    color: #101813;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e4c58a;
+    transform: translateY(-2px);
+}
+
+.game-actions button {
+    flex: 1;
+}
+
+.game-message {
+    background: #10221c;
+    border-left: 3px solid #d6b477;
+    padding: 18px;
+    color: #d0d8d1;
+    line-height: 1.6;
+}
+
+.inventory-panel ul {
+    list-style: none;
+    margin-bottom: 35px;
+}
+
+.inventory-panel li {
+    padding: 10px;
+    background: #1a3026;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.map-locations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.map-locations button {
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .game-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .island-scene {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 500px) {
+    .game-layout {
+        padding: 12px;
+    }
+
+    .game-actions {
+        flex-direction: column;
+    }
+}

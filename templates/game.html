@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mystery Island | Adventure</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/game.css') }}">
+</head>
+
+<body>
+
+    <header class="game-header">
+        <h1>MYSTERY ISLAND</h1>
+        <p>THE LOST LIGHTHOUSE</p>
+    </header>
+
+    <main class="game-layout">
+
+        <!-- PLAYER STATUS -->
+        <aside class="panel player-panel">
+            <h2>PLAYER STATUS</h2>
+
+            <p>Player: <span id="playerName">Explorer</span></p>
+
+            <p>Location: <span id="playerLocation">Beach</span></p>
+
+            <p>Energy: <span id="playerEnergy">5</span> / 7</p>
+
+            <div class="energy-bar">
+                <div id="energyFill"></div>
+            </div>
+        </aside>
+
+        <!-- MAIN ISLAND ENVIRONMENT -->
+        <section class="island-area">
+
+            <div class="island-heading">
+                <p>YOUR CURRENT DESTINATION</p>
+                <h2 id="locationTitle">THE BEACH</h2>
+            </div>
+
+            <div class="island-scene">
+                <p id="sceneDescription">
+                    You wake up on a mysterious island.
+                    The sound of the ocean surrounds you.
+                </p>
+            </div>
+
+            <div class="game-actions">
+                <button id="searchButton">SEARCH LOCATION</button>
+                <button id="exploreButton">EXPLORE</button>
+            </div>
+
+            <div class="game-message" id="gameMessage">
+                Your adventure begins here.
+            </div>
+
+        </section>
+
+        <!-- INVENTORY -->
+        <aside class="panel inventory-panel">
+            <h2>INVENTORY</h2>
+
+            <ul id="inventoryList">
+                <li>Your inventory is empty.</li>
+            </ul>
+
+            <h2>ISLAND MAP</h2>
+
+            <div class="map-locations">
+                <button data-location="Beach">Beach</button>
+                <button data-location="Jungle">Jungle</button>
+                <button data-location="Cave">Cave</button>
+                <button data-location="Old Bridge">Old Bridge</button>
+                <button data-location="Lighthouse">Lighthouse</button>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='js/adventure.js') }}"></script>
+
+</body>
+</html>

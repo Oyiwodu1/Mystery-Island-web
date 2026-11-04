@@ -1,0 +1,322 @@
+/* GENERAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #07110f;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* NAVIGATION BAR */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    background: rgba(3, 12, 10, 0.65);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #d6b477;
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(2, 10, 9, 0.3),
+            rgba(2, 10, 9, 0.85)
+        ),
+        radial-gradient(
+            ellipse at 50% 45%,
+            #31594d,
+            #142c27 45%,
+            #07110f 85%
+        );
+
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.45),
+            transparent,
+            rgba(0, 0, 0, 0.45)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 850px;
+
+    text-align: center;
+    padding-top: 70px;
+
+    animation: fadeIn 1.5s ease;
+}
+
+.eyebrow {
+    color: #d6b477;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.hero-content h1 {
+    font-size: clamp(55px, 10vw, 115px);
+    line-height: 0.95;
+    letter-spacing: 5px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: #d6b477;
+}
+
+.hero-content h2 {
+    margin-top: 25px;
+    font-size: 17px;
+    letter-spacing: 8px;
+    font-weight: 400;
+}
+
+.description {
+    max-width: 560px;
+    margin: 30px auto;
+
+    color: #d0d7d2;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* START BUTTON */
+
+.start-button {
+    background: #c4a46a;
+    color: #101813;
+
+    border: none;
+    padding: 17px 35px;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-button span {
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+.start-button:hover {
+    background: #e4c58a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(196, 164, 106, 0.2);
+}
+
+.hint {
+    margin-top: 25px;
+    color: #a3aaa5;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+
+/* LOCATION LABEL */
+
+.location-label {
+    position: absolute;
+    bottom: 35px;
+    left: 7%;
+
+    color: #b8c1bb;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.location-dot {
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    margin-right: 10px;
+
+    background: #d6b477;
+    border-radius: 50%;
+}
+
+
+/* STORY SECTION */
+
+.story-section {
+    padding: 100px 10%;
+    text-align: center;
+    background: #0b1915;
+}
+
+.story-section h2 {
+    font-size: clamp(25px, 4vw, 40px);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.story-section > p:last-child {
+    max-width: 700px;
+    margin: auto;
+
+    color: #b8c1bb;
+    font-size: 15px;
+    line-height: 2;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: #050c09;
+    color: #89938c;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+
+        width: 100%;
+        padding: 25px;
+
+        background: #0b1915;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero-content h2 {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .location-label {
+        font-size: 8px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
